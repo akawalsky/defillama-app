@@ -17,6 +17,18 @@ interface IProtocolsChainsSearch extends ICommonSearchProps {
 
 export default function ProtocolsChainsSearch(props: IProtocolsChainsSearch) {
 	return (
+		<DesktopSearch
+			{...props}
+			data={[]}
+			loading={false}
+			filters={null}
+			onSearchTermChange={(value) => {
+				// refine(value)
+			}}
+		/>
+	)
+
+	return (
 		<SearchV2 indexName="protocols">
 			<Search {...props} />
 		</SearchV2>
